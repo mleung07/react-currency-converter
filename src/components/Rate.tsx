@@ -20,7 +20,7 @@ const Rate = ({ rate, change }: Props) => {
     >
       <Stack direction="row" alignItems="center" gap={1}>
         <MonetizationOnIcon color="primary" fontSize="large" />
-        <Typography variant="h6">
+        <Typography variant="h5">
           {from}/{to}
         </Typography>
       </Stack>

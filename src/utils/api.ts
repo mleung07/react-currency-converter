@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const baseUrl = "https://api.frankfurter.dev/v1";
 
+// TODO: get a more accurate date as data is updated around 4 PM UTC
 const getYesterdayUTC = () => {
   const now = new Date();
   // Subtract one day (in milliseconds)
@@ -29,7 +30,7 @@ const useLatestRate = (from: string, to: string) => {
   return useQuery({
     queryKey: ["latest-rates", `${from}-${to}`],
     queryFn: () => getLatest(from, to),
-    staleTime: Infinity, // skip call when cache hit
+    staleTime: Infinity, // skip network call on cache hit
   });
 };
 
